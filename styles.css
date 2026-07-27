@@ -1,0 +1,566 @@
+/* ==========================================================================
+   A&B SWEET LIVING — Design Tokens
+   Gallery-dark theme: every section lives on the brand's navy tones.
+   Gold + script font are reserved for the signature moments only.
+   ========================================================================== */
+:root {
+  /* Brand colors */
+  --navy-950: #1A1A2E;   /* deepest background — hero, footer */
+  --navy-900: #16213E;   /* mid panel — alternating gallery "rooms" */
+  --navy-800: #0F3460;   /* richest panel — accent rooms, card fills */
+  --gold:     #EFC07B;   /* rare signature accent — logo, signature, hairline only */
+
+  /* Text on dark (no light backgrounds anywhere on this site) */
+  --cream:      #F6F3EA; /* primary text on dark */
+  --cream-soft: #B7BAD0; /* secondary / muted text on dark */
+  --cream-faint:#8B8EA6; /* tertiary text, captions */
+
+  --line: rgba(246, 243, 234, 0.14);
+  --line-strong: rgba(246, 243, 234, 0.26);
+
+  /* Type */
+  --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
+  --font-signature: 'Parisienne', 'Brittany Signature', cursive;
+
+  /* Rhythm */
+  --gutter: clamp(1.5rem, 5vw, 5rem);
+  --section-y: clamp(4.5rem, 10vw, 8.5rem);
+  --radius: 2px;
+}
+
+/* ==========================================================================
+   Reset
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-display);
+  background: var(--navy-950);
+  color: var(--cream);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { margin: 0; font-weight: 500; letter-spacing: 0.01em; color: var(--cream); }
+p { margin: 0; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+ul { list-style: none; margin: 0; padding: 0; }
+
+/* Visible, high-contrast focus ring everywhere */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--cream);
+  color: var(--navy-950);
+  padding: 0.75rem 1.25rem;
+  z-index: 1000;
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+/* ==========================================================================
+   Shared layout helpers
+   ========================================================================== */
+.section-inner {
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.section-inner.narrow { max-width: 860px; text-align: center; }
+
+.eyebrow {
+  display: block;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.05rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cream-soft);
+  margin-bottom: 1.25rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+.eyebrow::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 34px; height: 1px;
+  background: var(--gold);
+}
+.section-inner.narrow .eyebrow::after,
+.contact .eyebrow::after,
+.offer .eyebrow::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.hero-content .eyebrow::after { background: var(--gold); }
+
+.lead {
+  font-size: clamp(1.15rem, 1.6vw, 1.4rem);
+  color: var(--cream-soft);
+  max-width: 46ch;
+  margin: 1.25rem auto 0;
+  font-weight: 400;
+}
+.body-copy {
+  font-size: 1.1rem;
+  color: var(--cream-soft);
+  max-width: 60ch;
+  margin: 1.5rem auto 0;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.95rem 2.25rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+  border-radius: var(--radius);
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+.btn-primary {
+  margin-top: 2.5rem;
+  background: var(--cream);
+  color: var(--navy-950);
+  border-color: var(--cream);
+}
+.btn-primary:hover { background: transparent; color: var(--cream); border-color: var(--cream); }
+
+.btn-outline {
+  color: var(--cream);
+  border-color: var(--line-strong);
+}
+.btn-outline:hover { background: rgba(246,243,234,0.08); border-color: var(--cream); }
+
+/* Media frame — shared container for real images (border, fallback fill, cover-fit) */
+.media-frame {
+  position: relative;
+  overflow: hidden;
+  background: var(--navy-800);
+  border: 1px solid var(--line);
+}
+.media-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ==========================================================================
+   Header / Nav
+   ========================================================================== */
+.site-header {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 500;
+  background: rgba(26, 26, 46, 0.82);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.header-inner {
+  max-width: 1400px;
+  margin-inline: auto;
+  padding: 1rem var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.logo-mark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  white-space: nowrap;
+}
+.logo-script {
+  font-family: var(--font-signature);
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--gold);
+}
+.logo-word {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  background: var(--navy-950);
+  overflow: hidden;
+}
+.hero-media {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  display: block;
+}
+.hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 26, 46, 0);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 0 var(--gutter) clamp(4rem, 9vw, 7rem);
+  max-width: 1400px;
+  margin-inline: auto;
+}
+.hero-content .eyebrow { color: var(--gold); font-size: 1rem; text-shadow: 0 2px 4px rgba(0,0,0,0.85), 0 4px 20px rgba(0,0,0,0.7); }
+.hero h1 {
+  font-size: clamp(2.75rem, 7vw, 5.5rem);
+  color: var(--cream);
+  font-weight: 400;
+  line-height: 1.05;
+  max-width: 16ch;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+}
+
+.hero-grid {
+  margin-top: clamp(3rem, 7vw, 5.5rem);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(2rem, 4vw, 3.5rem);
+  border-top: 1px solid var(--line);
+  padding-top: clamp(2rem, 4vw, 3rem);
+}
+.hero-item h2 {
+  font-size: 1.35rem;
+  color: var(--cream);
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+.hero-item p {
+  color: var(--cream-soft);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 34ch;
+}
+
+/* ==========================================================================
+   Services intro — navy-900 gallery room
+   ========================================================================== */
+.services-intro {
+  padding-top: var(--section-y);
+  background: var(--navy-900);
+  border-top: 1px solid var(--line);
+}
+.services-intro h2 {
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  color: var(--cream);
+}
+.showcase-media {
+  margin-top: clamp(3.5rem, 8vw, 6rem);
+  height: clamp(320px, 45vw, 640px);
+  width: 100%;
+}
+
+/* ==========================================================================
+   Offer / What We Offer — navy-950 room
+   ========================================================================== */
+.offer {
+  padding-block: var(--section-y);
+  background: var(--navy-950);
+  border-top: 1px solid var(--line);
+}
+.offer .section-inner { text-align: center; }
+.offer h2 {
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  color: var(--cream);
+  margin-bottom: clamp(3rem, 7vw, 5rem);
+}
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(2rem, 4vw, 3rem);
+  text-align: left;
+}
+.offer-media {
+  aspect-ratio: 4 / 5;
+  width: 100%;
+  margin-bottom: 1.75rem;
+}
+.offer-card h3 {
+  font-size: 1.5rem;
+  color: var(--cream);
+  margin-bottom: 0.5rem;
+}
+.offer-card p {
+  color: var(--cream-soft);
+  font-size: 1.02rem;
+  max-width: 38ch;
+}
+
+/* ==========================================================================
+   Philosophy / Quote — navy-800 richest room, signature moment
+   ========================================================================== */
+.philosophy {
+  position: relative;
+  overflow: hidden;
+  background: var(--navy-800);
+  padding-block: clamp(5rem, 12vw, 10rem);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.philosophy-media {
+  position: absolute;
+  inset: 0;
+}
+.philosophy-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.philosophy-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15,52,96,0.90) 0%, rgba(15,52,96,0) 100%);
+}
+.philosophy .section-inner {
+  position: relative;
+  z-index: 2;
+}
+.philosophy blockquote {
+  margin: 0;
+}
+.philosophy p {
+  font-size: clamp(1.5rem, 3.4vw, 2.4rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--cream);
+}
+.philosophy .signature {
+  font-family: var(--font-signature);
+  font-size: 2.75rem;
+  color: var(--gold);
+  margin-top: 2.75rem;
+  line-height: 1;
+}
+.philosophy .attribution {
+  display: block;
+  font-style: normal;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cream-soft);
+  margin-top: 0.75rem;
+}
+
+/* ==========================================================================
+   Contact — navy-900 room
+   ========================================================================== */
+.contact {
+  background: var(--navy-900);
+  padding-top: var(--section-y);
+}
+.contact .section-inner { text-align: center; }
+.contact h2 {
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  color: var(--cream);
+}
+
+.contact-grid {
+  margin-top: clamp(3rem, 6vw, 4.5rem);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  text-align: left;
+}
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 2rem;
+  background: rgba(15, 52, 96, 0.35);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.contact-card:hover,
+.contact-card:focus-visible {
+  border-color: var(--gold);
+  background: rgba(15, 52, 96, 0.55);
+}
+.contact-label {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cream-faint);
+}
+.contact-value {
+  font-size: 1.25rem;
+  color: var(--cream);
+}
+
+.map-media {
+  margin-top: clamp(4rem, 8vw, 6rem);
+  height: clamp(260px, 32vw, 420px);
+  width: 100%;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.site-footer {
+  background: var(--navy-950);
+  color: var(--cream-soft);
+  margin-top: var(--section-y);
+  border-top: 1px solid var(--line);
+}
+.footer-inner {
+  max-width: 1280px;
+  margin-inline: auto;
+  padding: clamp(4rem, 8vw, 6rem) var(--gutter) 3rem;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: clamp(2.5rem, 5vw, 4rem);
+}
+.footer-col h3 {
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cream);
+  margin-bottom: 1.25rem;
+}
+.footer-col p { font-size: 0.98rem; line-height: 1.7; color: var(--cream-soft); }
+.footer-col ul { display: flex; flex-direction: column; gap: 0.7rem; }
+.footer-col a {
+  font-size: 0.98rem;
+  border-bottom: 1px solid transparent;
+  color: var(--cream-soft);
+}
+.footer-col a:hover,
+.footer-col a:focus-visible { color: var(--cream); border-bottom-color: var(--gold); }
+
+.footer-brand .logo-mark-footer {
+  margin-bottom: 1.5rem;
+}
+.footer-brand .logo-mark-footer .logo-script { font-size: 2.5rem; }
+.footer-brand .logo-mark-footer .logo-word { font-size: 0.95rem; }
+.footer-contact { margin-top: 1rem; color: var(--cream-soft); }
+
+.social-list { flex-direction: column; }
+
+.footer-bottom {
+  border-top: 1px solid var(--line);
+  padding: 1.75rem var(--gutter) 2rem;
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--cream-faint);
+}
+
+/* ==========================================================================
+   WhatsApp floating button
+   ========================================================================== */
+.whatsapp-fab {
+  position: fixed;
+  right: clamp(1rem, 4vw, 2rem);
+  bottom: clamp(1rem, 4vw, 2rem);
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--navy-800);
+  border: 1px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 600;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.whatsapp-fab:hover,
+.whatsapp-fab:focus-visible {
+  transform: translateY(-3px);
+  background: var(--navy-900);
+}
+.whatsapp-fab svg {
+  width: 28px;
+  height: 28px;
+  fill: var(--cream);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .offer-grid { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
+  .contact-grid { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .footer-brand { grid-column: 1 / -1; }
+}
+
+@media (max-width: 760px) {
+  .hero { min-height: 78vh; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .footer-brand { grid-column: auto; }
+}
+
+@media (max-width: 560px) {
+  .header-inner { padding-block: 0.85rem; }
+  .logo-script { font-size: 1.6rem; }
+  .logo-word { font-size: 0.7rem; letter-spacing: 0.1em; }
+}
