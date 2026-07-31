@@ -9,6 +9,7 @@
   --navy-900: #16213E;   /* mid panel — alternating gallery "rooms" */
   --navy-800: #0F3460;   /* richest panel — accent rooms, card fills */
   --gold:     #EFC07B;   /* rare signature accent — logo, signature, hairline only */
+  --gold-faded: rgba(239, 192, 123, 0.7);
 
   /* Text on dark (no light backgrounds anywhere on this site) */
   --cream:      #F8F6F0; /* primary text on dark - enhanced contrast */
@@ -187,6 +188,7 @@ button:focus-visible {
   outline: 3px solid var(--gold);
   outline-offset: 2px;
 }
+
 
 /* Media frame — shared container for real images (border, fallback fill, cover-fit) */
 .media-frame {
@@ -368,42 +370,166 @@ button:focus-visible {
    Offer / What We Offer — navy-950 room
    ========================================================================== */
 .offer {
-  padding-block: var(--section-y);
-  background: var(--navy-950);
+  position: relative;
+  background: transparent;
   border-top: 1px solid var(--line);
-}
-.offer .section-inner { text-align: center; }
-.offer h2 {
-  font-size: clamp(2rem, 4vw, 2.9rem);
-  color: var(--cream);
-  margin-bottom: clamp(3rem, 7vw, 5rem);
-}
-.offer-grid {
+  overflow: hidden;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(2rem, 4vw, 3rem);
-  text-align: left;
-  width: 100%;
-  box-sizing: border-box;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
 }
-.offer-media {
-  aspect-ratio: 4 / 5;
-  width: 100%;
-  margin-bottom: 1.75rem;
+
+.offer-half {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  min-height: 70vh;
 }
-.offer-card h3 {
-  font-size: 1.5rem;
+
+.offer-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.offer-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  min-height: 70vh;
+}
+
+.offer-content {
+  position: relative;
+  z-index: 2;
+  padding: clamp(2rem, 4vw, 4rem);
+  text-align: center;
+  max-width: 90%;
+}
+
+.offer-half-left::before,
+.offer-half-right::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(26, 26, 46, 0.7) 0%, rgba(26, 26, 46, 0.4) 50%, rgba(26, 26, 46, 0.7) 100%);
+  z-index: 1;
+}
+
+.offer-content h3 {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
   color: var(--cream);
-  margin-bottom: 0.5rem;
+  margin-bottom: clamp(0.75rem, 1.5vw, 1.25rem);
   overflow-wrap: break-word;
   word-wrap: break-word;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
-.offer-card p {
-  color: var(--cream-soft);
-  font-size: 1.02rem;
+
+.offer-content p {
+  color: var(--cream);
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  line-height: 1.6;
   max-width: 38ch;
+  margin-inline: auto;
   overflow-wrap: break-word;
   word-wrap: break-word;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.offer-warranty {
+  font-family: var(--font-signature);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  color: var(--gold);
+  text-align: center;
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.2;
+}
+
+/* Offer section title overlay */
+.offer-title-overlay {
+  position: absolute;
+  top: clamp(4%, 6vw, 8%);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  padding: 0 var(--gutter);
+}
+
+.offer-section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  color: var(--cream);
+  opacity: 0.6;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.offer-title-underline {
+  width: clamp(120px, 25vw, 160px);
+  height: 3px;
+  margin: 0 auto;
+  background: var(--gold);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 8px rgba(239, 192, 123, 0.4);
+}
+
+.offer-title-underline::before,
+.offer-title-underline::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--gold);
+  border-radius: 50%;
+}
+
+.offer-title-underline::before {
+  top: -4px;
+  left: 10%;
+  width: 80%;
+  opacity: 0.7;
+}
+
+.offer-title-underline::after {
+  top: -8px;
+  left: 20%;
+  width: 60%;
+  opacity: 0.4;
+}
+
+/* Offer warranty overlay */
+.offer-warranty-overlay {
+  position: absolute;
+  bottom: clamp(4%, 6vw, 8%);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+  padding: 0 var(--gutter);
+}
+
+.offer-warranty-text {
+  font-family: var(--font-signature);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  color: var(--gold);
+  line-height: 1.2;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  margin: 0;
 }
 
 /* ==========================================================================
@@ -598,8 +724,23 @@ button:focus-visible {
 .map-overlay {
   position: absolute;
   inset: 0;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 10;
+}
+
+.map-button-text {
+  background: var(--cream);
+  color: var(--navy-950);
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
 /* ==========================================================================
@@ -617,10 +758,20 @@ button:focus-visible {
   margin-inline: auto;
   padding: clamp(1.5rem, 3vw, 2.5rem) var(--gutter) 2rem;
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: clamp(2.5rem, 5vw, 4rem);
   width: 100%;
   box-sizing: border-box;
+  align-items: center;
+}
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.footer-col > * {
+  margin-left: 0;
+  padding-left: 0;
 }
 .footer-col h3 {
   font-size: 1.1rem;
@@ -629,9 +780,10 @@ button:focus-visible {
   color: var(--cream);
   margin-bottom: 1.25rem;
   font-weight: 500;
+  width: 100%;
 }
 .footer-col p { font-size: 1rem; line-height: 1.7; color: var(--cream-soft); }
-.footer-col ul { display: flex; flex-direction: column; gap: 0.7rem; }
+.footer-col ul { display: flex; flex-direction: column; gap: 0.7rem; width: 100%; padding-left: 0; }
 .footer-col a {
   font-size: 1rem;
   border-bottom: 1px solid transparent;
@@ -648,13 +800,18 @@ button:focus-visible {
 }
 
 .footer-brand .logo-mark-footer {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.75rem;
+  margin-left: 0;
+  padding-left: 0;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.6rem;
 }
 .footer-brand .logo-mark-footer .logo-script { font-size: 2.5rem; }
 .footer-brand .logo-mark-footer .logo-word { font-size: 0.95rem; }
-.footer-contact { margin-top: 1rem; color: var(--cream-soft); }
+.footer-contact { margin-top: 0.5rem; color: var(--cream-soft); line-height: 1.7; margin-left: 0; padding-left: 0; }
 
-.social-list { flex-direction: column; }
+.social-list { flex-direction: column; width: 100%; }
 
 .footer-bottom {
   border-top: 1px solid var(--line);
@@ -704,11 +861,16 @@ button:focus-visible {
    Responsive
    ========================================================================== */
 @media (max-width: 900px) {
+  .offer { grid-template-columns: 1fr; }
   .offer-grid { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
+  .offer-split { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
   .contact-emails { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
   .footer-brand { grid-column: 1 / -1; }
+
+  .offer-title-overlay { top: 6%; }
+  .offer-warranty-overlay { bottom: 6%; }
 }
 
 @media (max-width: 760px) {
@@ -723,6 +885,15 @@ button:focus-visible {
     letter-spacing: 0.08em;
     padding: 8px 14px;
     max-width: 100%;
+  }
+  .offer-split {
+    min-height: auto;
+  }
+  .offer-half {
+    min-height: 60vh;
+  }
+  .offer-content {
+    padding: clamp(1.5rem, 4vw, 2.5rem);
   }
 }
 

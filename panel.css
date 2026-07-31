@@ -1,0 +1,664 @@
+/* ==========================================================================
+   SERVICE PANEL — Premium Drawer Overlay
+   Scoped under .service-panel to prevent style leakage
+   ========================================================================== */
+
+/* ==========================================================================
+   Overlay & Background States
+   ========================================================================== */
+.service-panel-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 26, 46, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 250ms ease, visibility 250ms ease;
+}
+
+.service-panel-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Homepage background state when panel is open */
+body.service-panel-open {
+  overflow: hidden;
+}
+
+body.service-panel-open main {
+  transform: scale(0.98);
+  opacity: 0.92;
+  filter: blur(3px);
+  transition: transform 250ms ease, opacity 250ms ease, filter 250ms ease;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Panel Container
+   ========================================================================== */
+.service-panel {
+  position: fixed;
+  inset: 0;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 250ms ease, visibility 250ms ease;
+}
+
+.service-panel.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.service-panel-inner {
+  background: rgba(26, 26, 46, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(248, 246, 240, 0.15);
+  border-radius: 30px;
+  box-shadow: 
+    0 25px 80px rgba(0, 0, 0, 0.6),
+    0 10px 30px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(248, 246, 240, 0.08);
+  width: 75%;
+  max-width: 1100px;
+  height: 85vh;
+  max-height: 900px;
+  overflow: hidden;
+  transform: scale(0.95) translateY(10px);
+  transition: transform 250ms ease-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-panel.is-open .service-panel-inner {
+  transform: scale(1) translateY(0);
+}
+
+/* ==========================================================================
+   Panel Content Wrapper
+   ========================================================================== */
+.service-panel-content {
+  display: none;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.service-panel-content.is-active {
+  display: flex;
+}
+
+/* ==========================================================================
+   Close Button
+   ========================================================================== */
+.service-panel-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 44px;
+  height: 44px;
+  background: rgba(248, 246, 240, 0.08);
+  border: 1px solid rgba(248, 246, 240, 0.2);
+  border-radius: 50%;
+  color: #F8F6F0;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  padding: 0;
+}
+
+.service-panel-close:hover,
+.service-panel-close:focus-visible {
+  background: rgba(239, 192, 123, 0.15);
+  border-color: rgba(239, 192, 123, 0.4);
+  transform: scale(1.05);
+}
+
+.service-panel-close:focus-visible {
+  outline: 3px solid #EFC07B;
+  outline-offset: 2px;
+}
+
+.service-panel-close svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+}
+
+/* ==========================================================================
+   Panel Hero
+   ========================================================================== */
+.service-panel-hero {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.service-panel-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.service-panel-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(26, 26, 46, 0.3) 0%, rgba(26, 26, 46, 0.85) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2.5rem 3rem;
+}
+
+.service-panel-title {
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  color: #F8F6F0;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.1;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.service-panel-subtitle {
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+  font-style: italic;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: #EFC07B;
+  margin: 0;
+  line-height: 1.3;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================================================
+   Panel Body (Scrollable Content)
+   ========================================================================== */
+.service-panel-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 2.5rem 3rem 3rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(239, 192, 123, 0.4) rgba(26, 26, 46, 0.3);
+}
+
+.service-panel-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.service-panel-body::-webkit-scrollbar-track {
+  background: rgba(26, 26, 46, 0.3);
+}
+
+.service-panel-body::-webkit-scrollbar-thumb {
+  background: rgba(239, 192, 123, 0.4);
+  border-radius: 4px;
+}
+
+.service-panel-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(239, 192, 123, 0.6);
+}
+
+/* ==========================================================================
+   Panel Sections
+   ========================================================================== */
+.service-panel-section {
+  margin-bottom: 3rem;
+}
+
+.service-panel-section:last-of-type {
+  margin-bottom: 0;
+}
+
+.service-panel-section h3 {
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  font-weight: 400;
+  color: #F8F6F0;
+  margin: 0 0 1.25rem 0;
+  letter-spacing: 0.02em;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.service-panel-section h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 2px;
+  background: #EFC07B;
+  border-radius: 2px;
+}
+
+.service-panel-section p {
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #D4D6E0;
+  margin: 0;
+  max-width: 65ch;
+}
+
+/* ==========================================================================
+   Panel Lists
+   ========================================================================== */
+.service-panel-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.service-panel-list li {
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #D4D6E0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.service-panel-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #EFC07B;
+  font-size: 1.2rem;
+}
+
+/* ==========================================================================
+   Panel Cards Grid
+   ========================================================================== */
+.service-panel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.service-panel-card {
+  background: rgba(15, 52, 96, 0.35);
+  border: 1px solid rgba(248, 246, 240, 0.1);
+  border-radius: 4px;
+  padding: 1.5rem;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.service-panel-card:hover {
+  border-color: rgba(239, 192, 123, 0.3);
+  background: rgba(15, 52, 96, 0.5);
+}
+
+.service-panel-card h4 {
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #F8F6F0;
+  margin: 0 0 0.75rem 0;
+  letter-spacing: 0.02em;
+}
+
+.service-panel-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #D4D6E0;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Panel Gallery
+   ========================================================================== */
+.service-panel-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.service-panel-gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  aspect-ratio: 4 / 3;
+  background: rgba(15, 52, 96, 0.4);
+  border: 1px solid rgba(248, 246, 240, 0.1);
+}
+
+.service-panel-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+@media (hover: hover) {
+  .service-panel-gallery-item:hover img {
+    transform: scale(1.05);
+  }
+}
+
+/* ==========================================================================
+   Panel Steps
+   ========================================================================== */
+.service-panel-steps {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.service-panel-step {
+  background: rgba(15, 52, 96, 0.25);
+  border: 1px solid rgba(248, 246, 240, 0.08);
+  border-radius: 4px;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.service-panel-step-number {
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: rgba(239, 192, 123, 0.3);
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  line-height: 1;
+}
+
+.service-panel-step h4 {
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #F8F6F0;
+  margin: 0 0 0.75rem 0;
+  letter-spacing: 0.02em;
+  padding-right: 2rem;
+}
+
+.service-panel-step p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #D4D6E0;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Panel FAQ
+   ========================================================================== */
+.service-panel-faq {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.service-panel-faq-item {
+  background: rgba(15, 52, 96, 0.25);
+  border: 1px solid rgba(248, 246, 240, 0.08);
+  border-radius: 4px;
+  padding: 1.25rem 1.5rem;
+}
+
+.service-panel-faq-item h4 {
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #F8F6F0;
+  margin: 0 0 0.6rem 0;
+  letter-spacing: 0.02em;
+}
+
+.service-panel-faq-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #D4D6E0;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Panel CTA
+   ========================================================================== */
+.service-panel-cta {
+  background: rgba(239, 192, 123, 0.08);
+  border: 1px solid rgba(239, 192, 123, 0.2);
+  border-radius: 6px;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.service-panel-cta h3 {
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  font-weight: 400;
+  color: #F8F6F0;
+  margin: 0 0 0.75rem 0;
+  letter-spacing: 0.02em;
+}
+
+.service-panel-cta p {
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #D4D6E0;
+  margin: 0 0 1.5rem 0;
+}
+
+.service-panel-cta .btn {
+  margin-top: 0;
+}
+
+/* ==========================================================================
+   Panel Buttons (reuse homepage styles)
+   ========================================================================== */
+.service-panel .btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  min-height: 3.5rem;
+  min-width: 3.5rem;
+  max-width: 100%;
+  text-decoration: none;
+}
+
+.service-panel .btn-primary {
+  background: #F8F6F0;
+  color: #1A1A2E;
+  border-color: #F8F6F0;
+  font-weight: 500;
+}
+
+.service-panel .btn-primary:hover {
+  background: transparent;
+  color: #F8F6F0;
+  border-color: #F8F6F0;
+}
+
+.service-panel .btn-primary:focus-visible {
+  outline: 3px solid #EFC07B;
+  outline-offset: 2px;
+}
+
+/* Focus visible for panel */
+.service-panel a:focus-visible,
+.service-panel button:focus-visible {
+  outline: 3px solid #EFC07B;
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Responsive — Tablet
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .service-panel-inner {
+    width: 90%;
+    height: 88vh;
+  }
+
+  .service-panel-hero {
+    height: 240px;
+  }
+
+  .service-panel-hero-overlay {
+    padding: 2rem 2.5rem;
+  }
+
+  .service-panel-body {
+    padding: 2rem 2.5rem 2.5rem;
+  }
+
+  .service-panel-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service-panel-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   Responsive — Phone
+   ========================================================================== */
+@media (max-width: 768px) {
+  .service-panel {
+    padding: 1rem;
+  }
+
+  .service-panel-inner {
+    width: 96%;
+    height: 92vh;
+    max-height: none;
+    border-radius: 20px;
+  }
+
+  .service-panel-hero {
+    height: 200px;
+  }
+
+  .service-panel-hero-overlay {
+    padding: 1.5rem 1.75rem;
+  }
+
+  .service-panel-body {
+    padding: 1.75rem 1.5rem 2rem;
+  }
+
+  .service-panel-section {
+    margin-bottom: 2rem;
+  }
+
+  .service-panel-section h3 {
+    font-size: 1.4rem;
+  }
+
+  .service-panel-section p {
+    font-size: 1rem;
+  }
+
+  .service-panel-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .service-panel-gallery {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .service-panel-steps {
+    gap: 1rem;
+  }
+
+  .service-panel-step {
+    padding: 1.25rem;
+  }
+
+  .service-panel-step-number {
+    font-size: 2rem;
+    top: 0.5rem;
+    right: 0.75rem;
+  }
+
+  .service-panel-faq-item {
+    padding: 1rem 1.25rem;
+  }
+
+  .service-panel-cta {
+    padding: 1.5rem;
+  }
+
+  .service-panel-close {
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-panel-inner {
+    width: 94%;
+    height: 94vh;
+    border-radius: 16px;
+  }
+
+  .service-panel-hero {
+    height: 180px;
+  }
+
+  .service-panel-hero-overlay {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .service-panel-body {
+    padding: 1.5rem 1.25rem 1.75rem;
+  }
+
+  .service-panel-section h3::after {
+    width: 30px;
+  }
+
+  .service-panel-cta .btn {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+/* ==========================================================================
+   Reduced Motion
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .service-panel-overlay,
+  .service-panel,
+  .service-panel-inner,
+  body.service-panel-open main,
+  .service-panel-gallery-item img,
+  .service-panel-card,
+  .service-panel-close {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

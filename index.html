@@ -5,10 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
 <title>A&amp;B Sweet Living — Modern Interior &amp; Design</title>
 <meta name="description" content="A&B Sweet Living — luxury surface wrapping, premium flooring, and complete interior wraps for residential, hospitality, and commercial projects across the UAE.">
+<link rel="icon" type="image/png" href="cimages/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Parisienne&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="panel.css">
 </head>
 <body>
 
@@ -45,70 +47,42 @@
     meticulous craftsmanship, and an uncompromising standard of finish.
   </p>
 
-  <a href="#services" class="btn btn-primary">Explore Our Services</a>
+  <a href="#gallery" class="btn btn-primary">Explore Our Services</a>
 </div>
     </div>
   </section>
 
-  <!-- ========== SERVICES INTRO ========== -->
-  <section class="services-intro" id="services" aria-labelledby="services-title">
-    <div class="section-inner narrow">
-     <p class="eyebrow">Our Services</p>
-
-<h2 id="services-title">
-Surface solutions
-crafted with precision.
-</h2>
-
-<p class="lead">
-Luxury surface wrapping, premium flooring,
-and complete interior finishes for residential,
-hospitality, and commercial spaces.
-</p>
-
-<p class="body-copy">
-Each project is planned with care, installed efficiently,
-and finished to the highest standard, whether renewing a
-single room or completing an entire interior.
-</p>      <a href="#contact" class="btn btn-primary">Contact Us</a>
-    </div>
-
-    <div class="showcase-media media-frame">
-      <img src="cimages/services.webp" alt="Completed luxury interior project by A&amp;B Sweet Living" loading="lazy" decoding="async">
-    </div>
-  </section>
-
   <!-- ========== WHAT WE OFFER ========== -->
-  <section class="offer" id="gallery" aria-labelledby="offer-title">
-    <div class="section-inner">
-      <p class="eyebrow eyebrow-dark">What We Offer</p>
-      <h2 id="offer-title">Premium Wrapping Solutions</h2>
+  <section class="offer" id="gallery">
+    <div class="offer-title-overlay">
+      <h2 class="offer-section-title">What We Offer</h2>
+      <div class="offer-title-underline"></div>
+    </div>
 
-      <div class="offer-grid">
-        <article class="offer-card">
-          <div class="offer-media media-frame">
-            <img src="cimages/floor.webp" alt="Luxury floor wrapping finish" loading="lazy" decoding="async">
-          </div>
-          <h3>Floor Wrapping</h3>
-          <p>Luxury finishes that endure.</p>
-        </article>
-
-        <article class="offer-card">
-          <div class="offer-media media-frame">
-            <img src="cimages/card1.webp" alt="Interior design detail — walls, doors, and wardrobes" loading="lazy" decoding="async">
-          </div>
-          <h3>Interior Design</h3>
-          <p>Walls, doors, wardrobes, and more.</p>
-        </article>
-
-        <article class="offer-card">
-          <div class="offer-media media-frame">
-            <img src="cimages/card2.webp" alt="Interior wrapping craftsmanship detail" loading="lazy" decoding="async">
-          </div>
-          <h3>Interior Wrapping</h3>
-          <p>For each project we establish a tailored plan, matched to space and purpose.</p>
-        </article>
+    <article class="offer-half offer-half-left">
+      <div class="offer-bg">
+        <img src="cimages/floor.webp" alt="Luxury floor wrapping finish" loading="lazy" decoding="async">
       </div>
+      <div class="offer-content">
+        <h3>Flooring Options</h3>
+        <p>A curated selection of wood, SPC, and parquet flooring chosen for lasting performance and timeless design.</p>
+        <a href="#contact" class="btn btn-primary">Discover More</a>
+      </div>
+    </article>
+
+    <article class="offer-half offer-half-right">
+      <div class="offer-bg">
+        <img src="cimages/card1.webp" alt="Interior design detail — walls, doors, and wardrobes" loading="lazy" decoding="async">
+      </div>
+      <div class="offer-content">
+        <h3>Interior Wrapping</h3>
+        <p>A versatile finish that redesigns walls, doors, wardrobes, and more with lasting style.</p>
+        <a href="#contact" class="btn btn-primary">Discover More</a>
+      </div>
+    </article>
+
+    <div class="offer-warranty-overlay">
+      <p class="offer-warranty-text">Backed by a 5-Year Warranty</p>
     </div>
   </section>
 
@@ -160,7 +134,7 @@ single room or completing an entire interior.
 
     <section class="map-section">
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d463876.0298467425!2d54.89782154459718!3d25.07628538765013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sUnited%20Arab%20Emirates!5e0!3m2!1sen!2s!4v1650000000000!5m2!1sen!2s"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2956980.8428964!2d53.847818!3d23.424076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e48dfb1ab12bd%3A0x33d32f56c0080aa7!2sUnited%20Arab%20Emirates!5e0!3m2!1sen!2s!4v1650000000000!5m2!1sen!2s"
         width="100%"
         height="100%"
         style="border:0;"
@@ -170,13 +144,6 @@ single room or completing an entire interior.
         title="United Arab Emirates map"
         class="map-iframe"
       ></iframe>
-      <a
-        href="https://www.google.com/maps/place/United+Arab+Emirates/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="map-overlay"
-        aria-label="Open UAE in Google Maps"
-      ></a>
     </section>
   </section>
 
@@ -190,7 +157,6 @@ single room or completing an entire interior.
       <span class="logo-mark logo-mark-footer">
         <span class="logo-script">A&amp;B</span><span class="logo-word">Sweet Living</span>
       </span>
-      <p>Serving residential, hospitality, and commercial projects across the UAE.</p>
       <p class="footer-contact">+971 52 644 2979<br>concierge@absweetliving.com<br>liaison@absweetliving.com</p>
     </div>
 
@@ -205,7 +171,7 @@ single room or completing an entire interior.
         <ul class="social-list">
           <li><a href="https://www.instagram.com/absweetliving/" aria-label="Follow us on Instagram" target="_blank" rel="noopener">Instagram</a></li>
           <li><a href="https://www.facebook.com/absweetliving" aria-label="Follow us on Facebook" target="_blank" rel="noopener">Facebook</a></li>
-          <li><a href="#" aria-label="Follow us on LinkedIn">LinkedIn</a></li>
+          <li><a href="https://www.linkedin.com/company/absweetliving" aria-label="Follow us on LinkedIn">LinkedIn</a></li>
         </ul>
       </nav>
     </div>
@@ -223,6 +189,11 @@ single room or completing an entire interior.
     <path d="M16.04 4C9.4 4 4 9.4 4 16.04c0 2.3.63 4.44 1.72 6.28L4 28l5.86-1.68a11.97 11.97 0 0 0 6.18 1.7h.01c6.64 0 12.04-5.4 12.04-12.04S22.68 4 16.04 4zm0 21.86c-1.94 0-3.75-.53-5.3-1.46l-.38-.22-3.9 1.12 1.15-3.8-.25-.4a9.86 9.86 0 0 1-1.5-5.26c0-5.47 4.45-9.92 9.92-9.92 2.65 0 5.14 1.03 7.02 2.9a9.86 9.86 0 0 1 2.9 7.02c-.02 5.47-4.47 9.92-9.66 10.02zm5.45-7.44c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5-.17-.01-.37-.01-.57-.01s-.52.07-.8.37c-.27.3-1.05 1.02-1.05 2.5 0 1.47 1.08 2.9 1.23 3.1.15.2 2.12 3.24 5.15 4.54.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.76-.72 2-1.4.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35z"/>
   </svg>
 </a>
+
+<!-- ========== SERVICE PANEL ROOT ========== -->
+<div id="service-panel-root" aria-hidden="true"></div>
+
+<script src="panel.js"></script>
 
 </body>
 </html>
