@@ -4,6 +4,23 @@
    ========================================================================== */
 
 /* ==========================================================================
+   Loading State
+   ========================================================================== */
+.service-panel-loading {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 26, 46, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  color: #EFC07B;
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+}
+
+/* ==========================================================================
    Overlay & Background States
    ========================================================================== */
 .service-panel-overlay {
@@ -322,6 +339,19 @@ body.service-panel-open main {
 }
 
 /* ==========================================================================
+   Panel Signature Text
+   ========================================================================== */
+.service-panel-signature-text {
+  font-family: 'Parisienne', 'Brittany Signature', cursive;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 400;
+  color: #EFC07B;
+  text-align: center;
+  margin-top: 2rem;
+  line-height: 1.2;
+}
+
+/* ==========================================================================
    Panel Gallery
    ========================================================================== */
 .service-panel-gallery {
@@ -335,16 +365,19 @@ body.service-panel-open main {
   position: relative;
   overflow: hidden;
   border-radius: 6px;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 21 / 10;
   background: rgba(15, 52, 96, 0.4);
   border: 1px solid rgba(248, 246, 240, 0.1);
+  width: 100%;
 }
 
 .service-panel-gallery-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   transition: transform 0.3s ease;
+  display: block;
 }
 
 @media (hover: hover) {

@@ -20,66 +20,101 @@
     <img src="cimages/floor.webp" alt="Premium flooring installation showcase" loading="lazy">
     <div class="service-panel-hero-overlay">
       <h2 class="service-panel-title">Flooring Options</h2>
-      <p class="service-panel-subtitle">Engineered for elegance, built to last</p>
+      <p class="service-panel-subtitle">Timeless Flooring, Crafted for Modern Living</p>
     </div>
   </div>
 
   <div class="service-panel-body">
     <section class="service-panel-section">
       <h3>Overview</h3>
-      <p>Our flooring collection represents the finest selection of engineered wood, SPC, and parquet solutions available in the UAE. Each material is carefully sourced for its exceptional durability, aesthetic appeal, and ability to withstand the region's unique climate conditions.</p>
+      <p>The right flooring defines the character of a space. Our carefully selected SPC collections combine authentic wood aesthetics with exceptional durability, delivering a refined finish designed for everyday living and the demands of the UAE climate.</p>
+      <p>Available in straight plank and herringbone formats, every floor is chosen for its lasting performance, aesthetic appeal, and timeless appeal.</p>
     </section>
 
     <section class="service-panel-section">
-      <h3>Benefits</h3>
-      <ul class="service-panel-list">
-        <li>Exceptional durability with scratch and water resistance</li>
-        <li>Temperature stability for year-round comfort</li>
-        <li>Low maintenance requirements for busy lifestyles</li>
-        <li>Enhanced property value through premium materials</li>
-        <li>Eco-friendly options with sustainable sourcing</li>
-      </ul>
-    </section>
-
-    <section class="service-panel-section">
-      <h3>Materials</h3>
+      <h3>Flooring Benefits</h3>
       <div class="service-panel-grid">
         <div class="service-panel-card">
-          <h4>Engineered Wood</h4>
-          <p>Multi-layer construction with real hardwood veneer, offering the beauty of solid wood with enhanced stability.</p>
+          <h4>Excellent Value</h4>
+          <p>Enhances the appearance and instant value of your property without the cost of extensive renovations.</p>
         </div>
         <div class="service-panel-card">
-          <h4>SPC Flooring</h4>
-          <p>Stone plastic composite with waterproof core, perfect for high-traffic areas and moisture-prone spaces.</p>
+          <h4>Lasting Durability</h4>
+          <p>Engineered to resist everyday wear, scratches, and heavy foot traffic.</p>
         </div>
         <div class="service-panel-card">
-          <h4>Parquet</h4>
-          <p>Classic geometric patterns that create timeless sophistication, available in various wood species and finishes.</p>
+          <h4>Easy Maintenance</h4>
+          <p>Simple to clean with minimal upkeep required.</p>
+        </div>
+        <div class="service-panel-card">
+          <h4>Authentic Wood Look</h4>
+          <p>Natural textures and realistic finishes that elevate modern interiors.</p>
+        </div>
+        <div class="service-panel-card">
+          <h4>Healthier Living</h4>
+          <p>Anti-bacterial and termite-resistant properties support a cleaner indoor environment.</p>
+        </div>
+        <div class="service-panel-card">
+          <h4>Underfloor Heating Compatible</h4>
+          <p>Designed to work with underfloor heating systems where required.</p>
+        </div>
+        <div class="service-panel-card">
+          <h4>Water Resistant</h4>
+          <p>Suitable for kitchens, bathrooms, and other spaces exposed to everyday moisture.</p>
+        </div>
+        <div class="service-panel-card">
+          <h4>Heat Resistant</h4>
+          <p>Maintains its shape and appearance in the UAE's demanding climate.</p>
+        </div>
+        <div class="service-panel-card">
+          <h4>Slip Resistant</h4>
+          <p>Textured surfaces provide improved grip for confident everyday use.</p>
         </div>
       </div>
     </section>
+
 
     <section class="service-panel-section">
       <h3>Gallery</h3>
       <div class="service-panel-gallery">
         <div class="service-panel-gallery-item">
-          <img src="cimages/floor.webp" alt="Oak engineered wood flooring in living room" loading="lazy">
+          <img src="cpanel-images/herringbone-brown.webp" alt="Herringbone brown flooring pattern" loading="lazy">
         </div>
         <div class="service-panel-gallery-item">
-          <img src="cimages/card1.webp" alt="SPC flooring in modern kitchen" loading="lazy">
+          <img src="cpanel-images/herringbone-white.webp" alt="Herringbone white flooring pattern" loading="lazy">
         </div>
         <div class="service-panel-gallery-item">
-          <img src="cimages/card2.webp" alt="Herringbone parquet in luxury bedroom" loading="lazy">
+          <img src="cpanel-images/straight-dark-gray.webp" alt="Straight dark gray flooring" loading="lazy">
         </div>
         <div class="service-panel-gallery-item">
-          <img src="cimages/hero.webp" alt="Wide plank flooring in open plan space" loading="lazy">
+          <img src="cpanel-images/straight-white.webp" alt="Straight white flooring" loading="lazy">
         </div>
       </div>
     </section>
 
     <section class="service-panel-section">
       <h3>Applications</h3>
-      <p>Our flooring solutions are designed for diverse environments including luxury residences, boutique hotels, retail spaces, offices, and hospitality venues. Each installation is tailored to the specific requirements of the space and usage patterns.</p>
+      <div class="service-panel-grid">
+        <div class="service-panel-card">
+          <h4>Residential Homes</h4>
+        </div>
+        <div class="service-panel-card">
+          <h4>Hotels</h4>
+        </div>
+        <div class="service-panel-card">
+          <h4>Retail Spaces</h4>
+        </div>
+        <div class="service-panel-card">
+          <h4>Offices</h4>
+        </div>
+        <div class="service-panel-card">
+          <h4>Restaurants</h4>
+        </div>
+        <div class="service-panel-card">
+          <h4>Commercial Interiors</h4>
+        </div>
+      </div>
+      <h4 class="service-panel-signature-text">Engineered for seamless integration into any interior.</h4>
     </section>
 
     <section class="service-panel-section">
@@ -87,23 +122,23 @@
       <div class="service-panel-steps">
         <div class="service-panel-step">
           <span class="service-panel-step-number">01</span>
-          <h4>Consultation</h4>
-          <p>Site assessment and material selection based on your vision and practical requirements.</p>
+          <h4>Inquiry & Free Site Visit</h4>
+          <p>Tell us about your project. We'll visit your space, assess the area, discuss your needs, and take accurate measurements.</p>
         </div>
         <div class="service-panel-step">
           <span class="service-panel-step-number">02</span>
-          <h4>Preparation</h4>
-          <p>Subfloor evaluation, moisture testing, and surface preparation for optimal adhesion.</p>
+          <h4>Selection & Consultation</h4>
+          <p>Explore flooring options with our experts. We'll help you compare materials, colors, finishes, and designs to find the right fit for your space and budget.</p>
         </div>
         <div class="service-panel-step">
           <span class="service-panel-step-number">03</span>
-          <h4>Installation</h4>
-          <p>Precision installation by certified craftsmen using industry-leading techniques.</p>
+          <h4>Quotation & Installation</h4>
+          <p>Receive a clear, detailed quotation with no surprises. Once approved, our experienced installers complete the project with precision and care.</p>
         </div>
         <div class="service-panel-step">
           <span class="service-panel-step-number">04</span>
-          <h4>Finishing</h4>
-          <p>Final inspection, cleaning, and care instructions for lasting beauty.</p>
+          <h4>Aftercare & Warranty</h4>
+          <p>Enjoy lasting peace of mind with workmanship warranty, product support, and responsive after-installation assistance whenever you need it.</p>
         </div>
       </div>
     </section>
@@ -113,15 +148,15 @@
       <div class="service-panel-faq">
         <div class="service-panel-faq-item">
           <h4>What is the typical installation timeline?</h4>
-          <p>Most residential projects are completed within 3-5 days, depending on the area size and preparation requirements.</p>
+          <p>Most residential projects are completed within a day, depending on the area size and preparation requirements.</p>
         </div>
         <div class="service-panel-faq-item">
-          <h4>Do you offer warranty on flooring?</h4>
-          <p>Yes, all our flooring comes with a comprehensive 5-year warranty covering manufacturing defects and installation issues.</p>
+          <h4>What does the warranty cover?</h4>
+          <p>Our 5-year warranty covers manufacturing defects in the flooring material and any installation or workmanship issues carried out by our team under normal use. If an eligible defect is identified, we will repair or replace the affected flooring free of charge. The warranty does not cover normal wear and tear, accidental damage, misuse, improper maintenance, flooding, structural movement, or work performed by third parties.</p>
         </div>
         <div class="service-panel-faq-item">
-          <h4>Can flooring be installed over existing tiles?</h4>
-          <p>In many cases, yes. We conduct a thorough assessment to determine if your existing surface is suitable for overlay installation.</p>
+          <h4>How do you handle installation over damaged surfaces?</h4>
+          <p>Before installation, we thoroughly assess the existing surface and recommend/execute any necessary preparation, which may include repairs, leveling, or surface treatment where required. By ensuring the subfloor is stable, smooth, and properly prepared, we deliver a high-quality installation built for long-term performance.</p>
         </div>
       </div>
     </section>
@@ -146,41 +181,72 @@
     <img src="cimages/card1.webp" alt="Interior wrapping transformation showcase" loading="lazy">
     <div class="service-panel-hero-overlay">
       <h2 class="service-panel-title">Interior Wrapping</h2>
-      <p class="service-panel-subtitle">Reimagine every surface with precision craftsmanship</p>
+      <p class="service-panel-subtitle">Crafted for beautiful surfaces, built to last</p>
     </div>
   </div>
 
   <div class="service-panel-body">
     <section class="service-panel-section">
       <h3>Overview</h3>
-      <p>Interior wrapping offers a revolutionary approach to surface transformation, allowing you to completely redesign walls, doors, wardrobes, cabinetry, and architectural elements without demolition. Our premium vinyl and film solutions deliver stunning results with minimal disruption.</p>
+      <p>Our interior wrapping collection represents a carefully selected range of premium architectural films for walls, doors, wardrobes, cabinetry, furniture, countertops, and interior features. Each finish is chosen for its durability, refined appearance, and ability to renew existing surfaces</p>
     </section>
 
     <section class="service-panel-section">
       <h3>Benefits</h3>
-      <ul class="service-panel-list">
-        <li>Complete transformation without construction or demolition</li>
-        <li>Cost-effective alternative to replacement materials</li>
-        <li>Extensive design options with textures and finishes</li>
-        <li>Durable and long-lasting with proper care</li>
-        <li>Quick installation with minimal downtime</li>
-      </ul>
+      <div class="service-panel-grid">
+        <div class="service-panel-card">
+          <h4>Excellent Value</h4>
+          <p>Enhances the appearance and instant value of your property without the cost of extensive renovations.</p>
+        </div>
+        <div class="service-panel-card">
+          <h4>Exceptional Durability</h4>
+          <p>Scratch and stain resistance for lasting beauty.</p>
+        </div>
+        <div class="service-panel-card">
+          <h4>Easy Maintenance</h4>
+          <p>Simple to clean with minimal upkeep required.</p>
+        </div>
+        <div class="service-panel-card">
+          <h4>Authentic Premium Finishes</h4>
+          <p>Natural textures and realistic finishes that elevate modern interiors.</p>
+        </div>
+        <div class="service-panel-card">
+          <h4>Extensive Selection</h4>
+          <p>Wide range of colours, textures, and finishes.</p>
+        </div>
+        <div class="service-panel-card">
+          <h4>Healthier Living</h4>
+          <p>Anti-bacterial and termite-resistant properties support a cleaner indoor environment.</p>
+        </div>
+        <div class="service-panel-card">
+          <h4>Water Resistant</h4>
+          <p>Suitable for kitchens, bathrooms, and other spaces exposed to everyday moisture.</p>
+        </div>
+        <div class="service-panel-card">
+          <h4>Heat Resistant</h4>
+          <p>Maintains its shape and appearance in the UAE's demanding climate.</p>
+        </div>
+        <div class="service-panel-card">
+          <h4>Slip Resistant</h4>
+          <p>Textured surfaces provide improved grip for confident everyday use.</p>
+        </div>
+      </div>
     </section>
 
     <section class="service-panel-section">
       <h3>Materials</h3>
       <div class="service-panel-grid">
         <div class="service-panel-card">
-          <h4>Wood Grain Finishes</h4>
-          <p>Realistic wood textures from oak to walnut, perfect for achieving natural warmth without solid timber costs.</p>
+          <h4>Wood Finishes</h4>
+          <p>Natural wood grains from light oak to rich walnut, offering the warmth and character of timber with outstanding consistency and durability.</p>
         </div>
         <div class="service-panel-card">
-          <h4>Matte & Gloss</h4>
-          <p>Sleek solid colors in contemporary palettes, ideal for modern minimalist aesthetics.</p>
+          <h4>Solid Colours</h4>
+          <p>Smooth matte and painted finishes in a carefully curated palette, suited to contemporary, classic, and minimalist interiors.</p>
         </div>
         <div class="service-panel-card">
-          <h4>Textured Films</h4>
-          <p>Leather, fabric, and stone effects that add tactile sophistication to any surface.</p>
+          <h4>Specialty Finishes</h4>
+          <p>Stone, marble, concrete, leather, fabric, and metallic textures that add depth, character, and visual interest to any space.</p>
         </div>
       </div>
     </section>
@@ -189,23 +255,43 @@
       <h3>Gallery</h3>
       <div class="service-panel-gallery">
         <div class="service-panel-gallery-item">
-          <img src="cimages/card1.webp" alt="Wrapped wardrobe doors in modern bedroom" loading="lazy">
+          <img src="cpanel-images2/1.webp" alt="Interior wrapping design showcase" loading="lazy">
         </div>
         <div class="service-panel-gallery-item">
-          <img src="cimages/card2.webp" alt="Kitchen cabinet wrapping transformation" loading="lazy">
+          <img src="cpanel-images2/2.webp" alt="Interior wrapping design showcase" loading="lazy">
         </div>
         <div class="service-panel-gallery-item">
-          <img src="cimages/floor.webp" alt="Door wrapping with wood grain finish" loading="lazy">
+          <img src="cpanel-images2/3.webp" alt="Interior wrapping design showcase" loading="lazy">
         </div>
         <div class="service-panel-gallery-item">
-          <img src="cimages/hero.webp" alt="Wall wrapping in luxury living space" loading="lazy">
+          <img src="cpanel-images2/4.webp" alt="Interior wrapping design showcase" loading="lazy">
         </div>
       </div>
     </section>
 
     <section class="service-panel-section">
       <h3>Applications</h3>
-      <p>Our wrapping services transform doors, wardrobes, kitchen cabinets, bathroom vanities, wall panels, columns, architraves, and furniture pieces. Perfect for renovations, refresh projects, and new construction seeking cost-effective premium finishes.</p>
+      <div class="service-panel-grid">
+        <div class="service-panel-card">
+          <h4>Residential Homes</h4>
+        </div>
+        <div class="service-panel-card">
+          <h4>Hotels</h4>
+        </div>
+        <div class="service-panel-card">
+          <h4>Retail Spaces</h4>
+        </div>
+        <div class="service-panel-card">
+          <h4>Offices</h4>
+        </div>
+        <div class="service-panel-card">
+          <h4>Restaurants</h4>
+        </div>
+        <div class="service-panel-card">
+          <h4>Commercial Interiors</h4>
+        </div>
+      </div>
+      <h4 class="service-panel-signature-text">Engineered for seamless integration into any interior.</h4>
     </section>
 
     <section class="service-panel-section">
@@ -213,23 +299,23 @@
       <div class="service-panel-steps">
         <div class="service-panel-step">
           <span class="service-panel-step-number">01</span>
-          <h4>Design Selection</h4>
-          <p>Choose from our extensive sample collection or custom colors to match your vision perfectly.</p>
+          <h4>Inquiry & Free Site Visit</h4>
+          <p>Tell us about your project. We'll visit your space, assess the area, discuss your needs, and take accurate measurements.</p>
         </div>
         <div class="service-panel-step">
           <span class="service-panel-step-number">02</span>
-          <h4>Surface Preparation</h4>
-          <p>Cleaning and priming surfaces to ensure optimal adhesion and flawless finish.</p>
+          <h4>Selection & Consultation</h4>
+          <p>Explore flooring options with our experts. We'll help you compare materials, colors, finishes, and designs to find the right fit for your space and budget.</p>
         </div>
         <div class="service-panel-step">
           <span class="service-panel-step-number">03</span>
-          <h4>Precision Application</h4>
-          <p>Expert installation with heat-forming techniques for seamless edges and corners.</p>
+          <h4>Quotation & Installation</h4>
+          <p>Receive a clear, detailed quotation with no surprises. Once approved, our experienced installers complete the project with precision and care.</p>
         </div>
         <div class="service-panel-step">
           <span class="service-panel-step-number">04</span>
-          <h4>Quality Assurance</h4>
-          <p>Final inspection and finishing touches for a professional, lasting result.</p>
+          <h4>Aftercare & Warranty</h4>
+          <p>Enjoy lasting peace of mind with workmanship warranty, product support, and responsive after-installation assistance whenever you need it.</p>
         </div>
       </div>
     </section>
@@ -238,23 +324,23 @@
       <h3>FAQ</h3>
       <div class="service-panel-faq">
         <div class="service-panel-faq-item">
-          <h4>How long does wrapped material last?</h4>
-          <p>With proper care, our premium wraps can last 7-10 years, maintaining their appearance and durability.</p>
+          <h4>What is the typical installation timeline?</h4>
+          <p>Most wrapping projects are completed within a day, depending on the surface area and any preparation requirements.</p>
         </div>
         <div class="service-panel-faq-item">
-          <h4>Can wrapped surfaces be cleaned normally?</h4>
-          <p>Absolutely. Our wraps are water-resistant and can be cleaned with mild soap and water, just like traditional surfaces.</p>
+          <h4>What does the warranty cover?</h4>
+          <p>Our 5-year warranty covers manufacturing defects in the wrapping material, along with any installation or workmanship issues carried out by our team under normal use. If an eligible defect is identified, we will repair or replace the affected wrap at no additional cost. The warranty does not cover normal wear and tear, accidental damage, misuse, improper maintenance, water damage, structural movement, or work performed by third parties.</p>
         </div>
         <div class="service-panel-faq-item">
-          <h4>Is wrapping suitable for high-traffic areas?</h4>
-          <p>Yes, we use commercial-grade films specifically designed for high-traffic environments with enhanced durability.</p>
+          <h4>How do you handle installation over damaged surfaces?</h4>
+          <p>Before installation, we thoroughly assess the existing surface and carry out any necessary preparation, which may include repairs, leveling, cleaning, or surface treatment where required. By ensuring the surface is stable, smooth, and properly prepared, we deliver a high-quality wrap designed for long-lasting performance.</p>
         </div>
       </div>
     </section>
 
     <section class="service-panel-cta">
-      <h3>Transform Your Interior Today</h3>
-      <p>Contact us for a free consultation and discover how wrapping can revolutionize your space.</p>
+      <h3>Ready to Transform Your Space?</h3>
+      <p>Schedule a consultation with our specialists to explore the ideal finish for your project.</p>
       <a href="https://wa.me/971526442979" class="btn btn-primary" target="_blank" rel="noopener">Get Started</a>
     </section>
   </div>
@@ -264,6 +350,7 @@
   let panelLoaded = false;
   let currentService = null;
   let triggerButton = null;
+  let lazyLoadInitiated = false;
 
   // DOM Elements (cached after load)
   let panelRoot = null;
@@ -282,11 +369,51 @@
       return;
     }
 
+    // Show loading indicator if panel is being opened
+    if (currentService) {
+      panelRoot.innerHTML = '<div class="service-panel-loading" aria-live="polite">Loading...</div>';
+    }
+
     // Insert content directly
     panelRoot.innerHTML = panelContent;
     initializePanelElements();
     attachPanelEventListeners();
     panelLoaded = true;
+  }
+
+  // Lazy load panel when offer section is near viewport
+  function initLazyLoad() {
+    if (lazyLoadInitiated) return;
+    lazyLoadInitiated = true;
+
+    const offerSection = document.querySelector('.offer');
+    if (!offerSection) {
+      // Fallback: load after a delay if section not found
+      setTimeout(loadPanel, 2000);
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          loadPanel();
+          observer.disconnect();
+        }
+      });
+    }, {
+      rootMargin: '200px 0px', // Start loading 200px before section enters viewport
+      threshold: 0.01
+    });
+
+    observer.observe(offerSection);
+
+    // Fallback: load after 3 seconds if user hasn't scrolled to section
+    setTimeout(() => {
+      if (!panelLoaded) {
+        loadPanel();
+        observer.disconnect();
+      }
+    }, 3000);
   }
 
   // Cache panel DOM elements after loading
@@ -417,15 +544,15 @@
     }
   }
 
-  // Initialize on DOM ready
+  // Initialize on DOM ready - use lazy loading strategy
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
-      loadPanel();
       attachTriggerHandlers();
+      initLazyLoad();
     });
   } else {
-    loadPanel();
     attachTriggerHandlers();
+    initLazyLoad();
   }
 
 })();
